@@ -1,13 +1,13 @@
 const express = require('express');
 const request = require('request-promise');
-require('dotenv').config();
+require('dotenv').config({path:'./.env'});
 const PORT = process.env.PORT || 5000;
 const app = express();
 
 
 app.use(express.json()); //it will allow application to parse json
  
-const ApiKey=process.env.ApiKey;
+const ApiKey=process.env.apiKey;
 const baseUrl=`http://api.scraperapi.com?api_key=${ApiKey}&autoparse=true`;
 
 // Welcome route
